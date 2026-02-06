@@ -26,6 +26,15 @@ func _physics_process(delta: float) -> void:
 	
 	animaciones()
 	
+func _input(event) -> void:
+	if Input.is_action_just_pressed("atacar") and is_on_floor():				
+		set_physics_process(false)#Deshabilita el physics_process
+		$AnimationPlayer.play("ATTACK")
+		await $AnimationPlayer.animation_finished
+		set_physics_process(true)
+		
+
+
 func animaciones():
 	if velocity.x > 0:
 		print("Va a la derecha")
