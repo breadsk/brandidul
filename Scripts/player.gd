@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var velocidad = 100
 var salto = 200
-var gravedad = 400
+var gravedad = 600
 
 #bucle que se repite cada delta tiempo
 func _physics_process(delta: float) -> void:
@@ -36,8 +36,7 @@ func _input(event) -> void:
 
 
 func animaciones():
-	if velocity.x > 0:
-		print("Va a la derecha")
+	if velocity.x > 0:		
 		$Sprite2D.flip_h = false
 		$AnimationPlayer.play("RUN")
 	elif  velocity.x < 0:
