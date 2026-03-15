@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var velocidad = 100
-var salto = 200
+var salto = 250
 var gravedad = 600
 
 #bucle que se repite cada delta tiempo
